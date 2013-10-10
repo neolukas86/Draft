@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Draft</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="new_player">Nuevo Jugador</string>
+    <string name="new_team">Nuevo Equipo</string>
+    <string name="cancel">Cancelar</string>
+    <string name="ok">OK</string>
+    <string name="name">Nombre</string>
+    <string name="players">Jugadores</string>
+    <string name="teams">Equipos</string>
+    <string name="shuffle_again_question">¿Está seguro de volver a sortear el orden de elección de los
+        jugadores?
+    </string>
+    <string name="shuffle_again">Volver a sortear orden</string>
+    <string name="pick_team">elige equipo</string>
+
+</resources>
