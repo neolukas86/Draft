@@ -6,28 +6,35 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
+        android:background="#414141"
         android:gravity="bottom"
         android:orientation="horizontal"
         android:paddingBottom="12dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingTop="12dp"
-        android:id="@+id/linearLayout">
+        android:id="@+id/topMenuLayout">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/logo_header"
+            android:layout_marginRight="48dp" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton3"
             android:src="@drawable/open_collection"
-            android:background="@android:color/darker_gray" />
+            android:background="#414141" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton4"
             android:src="@drawable/content_save"
-            android:background="@android:color/darker_gray"
+            android:background="#414141"
             android:layout_marginLeft="@dimen/activity_horizontal_margin" />
 
         <ImageButton
@@ -36,7 +43,7 @@
             android:id="@+id/imageButton5"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:src="@drawable/action_about"
-            android:background="@android:color/darker_gray" />
+            android:background="#414141" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -44,7 +51,58 @@
             android:id="@+id/imageButton6"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:src="@drawable/action_help"
-            android:background="@android:color/darker_gray" />
+            android:background="#414141" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="12dp"
+        android:id="@+id/bottomMenuLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/topMenuLayout">
+
+        <ImageButton
+            android:id="@+id/buttonNewPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/new_player_button"
+            android:contentDescription="@string/new_player"
+            android:src="@drawable/add_person_dark"
+            android:clickable="false"
+            android:adjustViewBounds="false" />
+
+        <ImageButton
+            android:id="@+id/buttonNewTeam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:background="@android:color/black"
+            android:contentDescription="@string/new_team"
+            android:src="@drawable/add_group_dark" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/buttonShuffle"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:src="@drawable/action_about_dark"
+            android:background="@android:color/black" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/buttonPick"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:background="@android:color/black"
+            android:src="@drawable/add_person" />
 
     </LinearLayout>
 
@@ -54,13 +112,18 @@
         android:id="@+id/listViewPlayersTeams"
         android:layout_gravity="right|top"
         android:paddingLeft="@dimen/activity_horizontal_padding"
-        android:layout_below="@+id/linearLayout" />
+        android:headerDividersEnabled="false"
+        android:layout_below="@+id/bottomMenuLayout" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:baselineAligned="false"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:id="@+id/playersTeamsLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/listViewPlayersTeams"
+        android:layout_above="@+id/bottomMenuLayout">
 
         <ListView
             android:id="@+id/listViewPlayers"
@@ -82,52 +145,4 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
-        android:gravity="bottom"
-        android:orientation="horizontal"
-        android:paddingBottom="12dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="12dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true">
-
-        <ImageButton
-            android:id="@+id/buttonNewPlayer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"
-            android:contentDescription="@string/new_player"
-            android:src="@drawable/add_person_dark" />
-
-        <ImageButton
-            android:id="@+id/buttonNewTeam"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:background="@android:color/darker_gray"
-            android:contentDescription="@string/new_team"
-            android:src="@drawable/add_group_dark" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:id="@+id/buttonShuffle"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:src="@drawable/action_about_dark"
-            android:background="@android:color/darker_gray" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:id="@+id/buttonPick"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:background="@android:color/darker_gray"
-            android:src="@drawable/add_person" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>
