@@ -3,6 +3,7 @@ package com.example.draft;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.app.Activity;
 import android.text.Editable;
@@ -15,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,7 +48,7 @@ public class MainActivity extends Activity{
 //        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
         // Remove title bar
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.new_activity_main);
 
 //        ListView lv = (ListView) findViewById(R.id.listViewPlayers);
 //        lv.setAdapter(new PlayerAdapter(this,playerList));
@@ -99,6 +101,25 @@ public class MainActivity extends Activity{
         headerText = (TextView) headerT.findViewById(R.id.headerTextView);
         headerText.setText(R.string.teams);
         listViewTeams.addHeaderView(headerT);
+
+        Resources res = getResources();
+
+        TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
+        tabs.setup();
+
+        TabHost.TabSpec spec = tabs.newTabSpec("mitab1");
+        spec.setContent(R.id.tab1);
+        spec.setIndicator("",
+                res.getDrawable(R.drawable.group));
+        tabs.addTab(spec);
+
+        spec=tabs.newTabSpec("mitab2");
+        spec.setContent(R.id.tab2);
+        spec.setIndicator("",
+                res.getDrawable(R.drawable.list2));
+        tabs.addTab(spec);
+
+        tabs.setCurrentTab(0);
     }
 
 

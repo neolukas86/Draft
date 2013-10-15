@@ -73,7 +73,7 @@
             android:id="@+id/buttonNewPlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/new_player_button"
+            android:background="@drawable/button_bottom"
             android:contentDescription="@string/new_player"
             android:src="@drawable/add_person_dark"
             android:clickable="false"

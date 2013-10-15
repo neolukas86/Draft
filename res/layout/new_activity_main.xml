@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#414141"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="12dp"
+        android:id="@+id/topMenuLayout">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/logo_header"
+            android:layout_marginRight="48dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton3"
+            android:src="@drawable/open_collection"
+            android:background="#414141" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton4"
+            android:src="@drawable/content_save"
+            android:background="#414141"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton5"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:src="@drawable/action_about"
+            android:background="#414141" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton6"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:src="@drawable/action_help"
+            android:background="#414141" />
+
+    </LinearLayout>
+
+
+        <TabHost android:id="@android:id/tabhost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TabWidget android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@android:id/tabs"
+                    android:tabStripEnabled="false" />
+
+                <FrameLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@android:id/tabcontent" >
+
+                    <LinearLayout android:id="@+id/tab1"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <RelativeLayout android:id="@+id/tabRelative"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout android:id="@+id/listsTab1"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_above="@+id/bottomMenuLayout">
+
+
+                            <ListView
+                                android:id="@+id/listViewPlayers"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="top|right"
+                                android:layout_weight="1"
+                                android:paddingLeft="@dimen/activity_horizontal_padding"
+                                android:paddingRight="@dimen/activity_horizontal_padding" />
+
+                            <ListView
+                                android:id="@+id/listViewTeams"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="top|left"
+                                android:layout_weight="1"
+                                android:paddingLeft="@dimen/activity_horizontal_padding"
+                                android:paddingRight="@dimen/activity_horizontal_padding" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/bottomMenuLayout"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:background="#d6d6d6"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:paddingLeft="12dp"
+                            android:paddingRight="12dp">
+
+                            <ImageButton
+                                android:id="@+id/buttonNewPlayer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/new_player"
+                                android:src="@drawable/user_add"
+                                android:clickable="false"
+                                android:adjustViewBounds="false"
+                                android:background="@drawable/button_bottom"
+                                android:layout_weight="1" />
+
+                            <ImageButton
+                                android:id="@+id/buttonNewTeam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/new_team"
+                                android:src="@drawable/group_add"
+                                android:background="@drawable/button_bottom"
+                                android:layout_weight="1" />
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:id="@+id/buttonShuffle"
+                                android:src="@drawable/games_dice"
+                                android:background="@drawable/button_bottom"
+                                android:layout_weight="1" />
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:id="@+id/buttonPick"
+                                android:src="@drawable/hand_point"
+                                android:background="@drawable/button_bottom"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/tab2"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <ListView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/listViewPlayersTeams"
+                            android:paddingLeft="@dimen/activity_horizontal_padding" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+
+</LinearLayout>
